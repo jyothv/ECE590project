@@ -1,24 +1,24 @@
 # Check safety of Finite State Machines
 
-## Objective:
+**Objective**:
 
 
-## Motivation: 
+**Motivation**: 
 
 
-## Steps involved and Milestone: 
+**Steps involved and Milestone**: 
 
 
 
 
-## Resources
+**Resources**:
 * [Elma](https://klavins.github.io/ECEP520/index.html) will be used a base to develop a library for checking the safety of finite state    machines.
 * The documentation for the project will be automatically generated using Doxygen.For all the classes and methods description will be generated. This will help user to understand purpose of the function, give information on arguments required and return types.
 *
 
 
 
-## References
+**References**:
 
 * The [Elma](https://klavins.github.io/ECEP520/index.html) process manager
 * Prof. Klavins' [Dockerhub](https://cloud.docker.com/u/klavins/repository/docker/klavins/ecep520) account
