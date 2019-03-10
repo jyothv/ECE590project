@@ -15,33 +15,33 @@ When the machine is in a current state s in S and receives an input a from I it 
 
 **Objective**:
 
-*Testing safety of Finite State Machine*: To ensure reliability and to verify functionality of the system we will test finite state machines. It is crucial to ensure the system goes into a predefined state on occurence of a particualar event. This guarantees safe operation of the system under all possile circumstances. We will do a *conformance testing* of the system. Given a specification of a  finite state machine, for which we have its transition diagram, and an implementation, we will test whether the implementation conforms to the specification. We will also generate a *checking sequence* which will help in fault detection in the system. 
+*Testing safety of Finite State Machine*: To ensure reliability and to verify functionality of the system we will test finite state machines. It is crucial to ensure the system goes into a predefined state on occurrence of a particular event. This guarantees safe operation of the system under all circumstances. We will do a *conformance testing* of the system. Given a specification of a  finite state machine, for which we have its transition diagram, and an implementation, we will test whether the implementation conforms to the specification. We will also generate a *checking sequence* which will help in fault detection in the system. 
 
 We will take the examples of Robot, Microwave and vending machine to test and confirm the safety. Random sequence of events will be produced to test the safe operation of the system.
 
 *Steps for testing*: In a given sequence of events for each event 
 1. Identify the current state.
-2. Has event trigerred change in state?
+2. Has event triggered change in state?
 3. Determine the new state of the system?
 4. Is the new state as expected after the test?
 Did the system change its states as expected by the given sequence of events?
 
 **Steps involved in the project and Milestone**: 
-1. First step is to create a Unittest with random sequences for Robot, Microwave and vending machine.
-Target completion date:
+1. First step is to create a Unittest with random sequence of events for Robot, Microwave and vending machine.
+Target completion date: 03/15/2019
 2. Create a class and methods required to receive sequence as arguments and  returns true or false after each step along the sequence.
-Target completion date:
+Target completion date: 03/17/2019
 3. Add necessary comments and details required to generate API documentation for the project.
-Target completion date:
+Target completion date: 03/19/2019
 4. Integrate unittest with rest of the code. Run verification tests.
-Target completion date:
-5. Submit a report with test results and obeservations.
-Target completion date:
+Target completion date: 03/21/2019
+5. Submit a report with test results and observations.
+Target completion date: 03/22/2019
 
 **Resources**:
 * [Elma](https://klavins.github.io/ECEP520/index.html) will be used a base to develop a library for checking the safety of finite state machines.
 * Unittest will be used to generate random sequence for each system.
-* The documentation for the project will be automatically generated using Doxygen.For all the classes and methods description will be generated. This will help user to understand purpose of the function, give information on arguments required and return types.
+* The documentation for the project will be automatically generated using Doxygen. For all the classes and methods description will be generated. This will help user to understand purpose of the function, give information on arguments required and return types.
 
 **References**:
 
