@@ -1,53 +1,27 @@
-# ECE P 520: Software Engineering for Embedded Applications
+# TITLE
 
-Modern embedded systems programming starts with the hardware and extends all the way to the cloud. The resulting myriad of programming languages, libraries, tools, data structures, and algorithms may seem difficult for any one programmer to master. In this course, we introduce the fundamentals of programming languages and software engineering common to all levels of embedded systems programming, giving students the conceptual tools they need to tackle any project.
+## Objective:
 
-Specifically, this course takes a detailed look at two programming languages, C++ and Javascript; teaches students how to use build tools, version control, and advanced editors; describes how to use and create software libraries; and ties everything together with a more substantial software engineering project.
 
-**Lectures**: Thurs 6pm - 9pm
+## Motivation: 
 
-**Homework**: Due weekly
 
-**Instructor**: Prof. Eric Klavins. Office hours: TBA
+## Steps involved and Milestone: 
 
-**Teaching Assistants**: Justin Vrana and Kung-Hung (Henry) Lu
 
-**Canvas Page**: (with announcements, discussions, and grades): https://canvas.uw.edu/courses/1255003 
 
-## Syllabus (Approximate)
-
-* Week 1: Basic tools: Git, Docker, Make, UNIX, and the C compiler
-* Week 2: C syntax and data types
-* Week 3: Building APIs in C
-* Week 4: Fundamentals of C++ and object oriented programming
-* Week 5: C++ Standard Template Library
-* Week 6: Event loops, process control, and scheduling
-* Week 7: Events and finite state machines
-* Week 8: Networking
-* Week 9: Cloud computing
-* Week 10: Projects
-
-## Homework
-
-Homework will be assigned weekly, and will be due the following Wednesday. Homework will be submitted by pushing your code and other materials to a github repository. We will clone your code and attempt to run it and grade it based on functionality, completeness, and style. Code is expected to be documented and have associated unit tests. 
 
 ## Resources
 
+
+
+## References
+
 * The [Elma](https://klavins.github.io/ECEP520/index.html) process manager
 * Prof. Klavins' [Dockerhub](https://cloud.docker.com/u/klavins/repository/docker/klavins/ecep520) account
-* We will be using [Github](https://github.com/) for version controlling all of our code. 
-* Please use the Visual Studio [Code](https://code.visualstudio.com/) to edit your code for this course.
+* [Github](https://github.com/) for version controlling all of our code. 
+* Visual Studio [Code](https://code.visualstudio.com/) .
 * [Google Test](https://github.com/google/googletest) unit testing environment
 * [Docker](https://www.docker.com/) container creation and management system
 * [C++](http://www.cplusplus.com/) language documentation
 * [Doxygen](http://www.doxygen.org/) API documentation generator
-
-## References
-
-* The git book. https://git-scm.com/book/en/v2.
-
-* Kerninghan and Ritchie, **C Programming**, 2nd Edition, https://hassanolity.files.wordpress.com/2013/11/the_c_programming_language_2.pdf.
-
-* GNU Make. https://www.gnu.org/software/make/manual/make.html#Introduction.
-
-* Books about C++: https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list.
