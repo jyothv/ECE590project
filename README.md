@@ -33,7 +33,7 @@ Target completion date: 03/15/2019
 **Progress as on 03/17/2019**:
 
 Below is the states machine operation of a vending machine. The below state machine will be tested for safe operation.
-
+![Image of state machine](https://github.com/jyothv/ECE590project/blob/master/VendingMachine.PNG)
 
 
 2. Create a class and methods required to receive sequence as arguments and  returns true or false after each step along the sequence.
