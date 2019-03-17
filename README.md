@@ -35,9 +35,13 @@ Target completion date: 03/15/2019
 Below is the states machine operation of a vending machine. The below state machine will be tested for safe operation.
 ![Image of state machine](https://github.com/jyothv/ECE590project/blob/master/VendingMachine.PNG)
 
+- I have created a Process for VendingMachine.
+- I have defined various State for the VendingMachine.Like IDLE, READY, VENDING and FAULT.
+- I have created responses to various events. Like COIN, COIN_RETURN, BUTTON, VEND_COMPLETE, GENERIC_FAULT.
+- I have added transition from one state to other state.
 
 2. Create a class and methods required to receive sequence as arguments and  returns true or false after each step along the sequence.
-Target completion date: 03/17/2019
+Target completion date: 03/17/2019 *This task is still in progress. Expected to complete around 03/19/2019*
 3. Add necessary comments and details required to generate API documentation for the project.
 Target completion date: 03/19/2019
 4. Integrate unittest with rest of the code. Run verification tests.
