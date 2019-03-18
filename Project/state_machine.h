@@ -51,6 +51,11 @@ namespace elma {
 
         //! Do not override init() for a state machine.        
         void stop();
+
+        vector<Transition> get_transitions();
+
+        State& initial() { return *_initial; }
+
         json to_json();
         private:
         vector<Transition> _transitions;

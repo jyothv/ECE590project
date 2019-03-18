@@ -7,6 +7,8 @@
 #include <chrono>
 #include <thread>
 #include <json/json.h>
+#include "RandomSequence.h"
+#include "CheckStateMachine.h"
 
 using namespace std::chrono;
 using namespace elma;
@@ -192,4 +194,44 @@ Manager m;
     .start()
     .emit(Event("clicked"));
      
+}
+
+TEST(rand, RandomSeqGenRobot) {
+    Robot robot = Robot("What a very nice robot");
+    std::vector<std::string> seq_ar= robot.get_events_list();
+    std::cout<<"Actual seq:"<<std::endl;
+    for(int i =0; i< seq_ar.size();i++){
+        std::cout<<seq_ar[i]<<std::endl;
+    }
+    std::vector<std::string> rand_seq= generate_random_sequence(seq_ar);
+    std::cout<<"Random seq:"<<std::endl;
+    for(int i =0; i< rand_seq.size();i++){
+        std::cout<<rand_seq[i]<<std::endl;
+    }
+
+    std::vector<Transition> robot_transition = robot.get_robot_transitions();
+    std::cout<<"Robot transitions:"<<std::endl;
+    for(auto transition : robot_transition ) {
+        std::cout<<"event_name: "<<transition.event_name()<<"\t";
+        std::cout<<"from name: "<<transition.from().name()<<"\t";
+        std::cout<<"to name: "<<transition.to().name()<<std::endl;
+    }
+}
+
+    TEST(rand, RandomSeqGenVM) {
+    VendingMachine vm = VendingMachine("My cool vm");
+    std::vector<std::string> seq_ar= vm.get_events_list();
+    std::cout<<"Actual seq:"<<std::endl;
+    for(int i =0; i< seq_ar.size();i++){
+        std::cout<<seq_ar[i]<<std::endl;
+    }
+    std::vector<std::string> rand_seq= generate_random_sequence(seq_ar);
+    std::cout<<"Random seq:"<<std::endl;
+    for(int i =0; i< rand_seq.size();i++){
+        std::cout<<rand_seq[i]<<std::endl;
+    }
+
+    
+    bool result = check_condition(rand_seq, vm, property );
+    std::cout<<"result: "<<result<<std::endl;
 }

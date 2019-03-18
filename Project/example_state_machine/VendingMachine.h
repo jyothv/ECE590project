@@ -21,10 +21,15 @@ class VendingMachine : public StateMachine {
 public:
     VendingMachine(std::string name) : StateMachine(name) {
         set_all_transition();
+        set_events();
     }
     VendingMachine() : StateMachine() {
         set_all_transition();
+        set_events();
     }
+    std::vector<std::string> get_events_list(){
+        return events_list;
+    } 
    
 //     * The initial state of the state machine should be IDLE
 //     * The function should output the current state of the state machine
@@ -59,9 +64,17 @@ private:
     VendingMachineState ready= VendingMachineState("Ready");
     VendingMachineState vending= VendingMachineState("Vending goodies");
     VendingMachineState fault= VendingMachineState("Machine at Fault");
-    //VendingMachineState reset= VendingMachineState("Machine Reset");
 
-    
+    void set_events(){
+
+        events_list.push_back("coin"); 
+        events_list.push_back("coin_return");
+        events_list.push_back("button");
+        events_list.push_back("vend_complete");
+        events_list.push_back("generic_fault");
+        events_list.push_back("reset");
+    }
+
     void set_all_transition(){
         set_initial(idle);
         add_transition("coin", idle, ready);
@@ -75,5 +88,5 @@ private:
         add_transition("reset", fault,idle);
         
     }
-    
+    std::vector<std::string> events_list;
 };

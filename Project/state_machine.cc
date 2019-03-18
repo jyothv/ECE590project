@@ -70,4 +70,8 @@ namespace elma {
         j["transitions"]= transition_array;
         return j;
 }
+
+vector<Transition> StateMachine::get_transitions(){
+    return _transitions;
+}
 };
