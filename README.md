@@ -17,7 +17,7 @@ When the machine is in a current state s in S and receives an input a from I it 
 
 *Testing safety of Finite State Machine*: To ensure reliability and to verify functionality of the system we will test finite state machines. It is crucial to ensure the system goes into a predefined state on occurrence of a particular event. This guarantees safe operation of the system under all circumstances. We will do a *conformance testing* of the system. Given a specification of a  finite state machine, for which we have its transition diagram, and an implementation, we will test whether the implementation conforms to the specification. We will also generate a *checking sequence* which will help in fault detection in the system. 
 
-We will take the examples of Robot, Microwave and vending machine to test and confirm the safety. Random sequence of events will be produced to test the safe operation of the system.
+We will take the examples of Robot and vending machine to test and confirm the safety. Random sequence of events will be produced to test the safe operation of the system.
 
 *Steps for testing*: In a given sequence of events for each event 
 1. Identify the current state.
@@ -36,7 +36,7 @@ Below is the states machine of a vending machine. The below state machine will b
 ![Image of state machine](https://github.com/jyothv/ECE590project/blob/master/VendingMachine.PNG)
 
 - I have defined various State for the VendingMachine.Like IDLE, READY, VENDING and FAULT.
-- I have created responses to various events. Like COIN, COIN_RETURN, BUTTON, VEND_COMPLETE, GENERIC_FAULT.
+- I have created responses to various events. Like COIN, COIN_RETURN, BUTTON, VEND_COMPLETE, GENERIC_FAULT, RESET.
 - I have added transition from one state to other state.
 
 2. Create a class and methods required to receive sequence as arguments and  returns true or false after each step along the sequence.
