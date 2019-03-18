@@ -38,7 +38,7 @@ Below is the states machine of a vending machine. The below state machine will b
 - I have defined various State for the VendingMachine.Like IDLE, READY, VENDING and FAULT.
 - I have created responses to various events. Like COIN, COIN_RETURN, BUTTON, VEND_COMPLETE, GENERIC_FAULT, RESET.
 - I have added transition from one state to other state.
-
+- I have created a function to generate random sequence of events foor the state machine.
 2. Create a class and methods required to receive sequence as arguments and  returns true or false after each step along the sequence.
 Target completion date: 03/17/2019 *This task is still in progress. Expected to complete around 03/19/2019*
 3. Add necessary comments and details required to generate API documentation for the project.
