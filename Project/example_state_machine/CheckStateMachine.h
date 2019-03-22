@@ -4,30 +4,24 @@
 
 using namespace elma;
 
-bool property(StateMachine& sm, const Event& et){
-        
-        std::vector<Transition> trans = sm.get_transitions();
-        bool valid = false;
-        State* curr = sm.current();
-        for (auto transition : _transitions ) {
-            if(transition.event_name() == et && transition.from().id() == curr->id){
-                valid |= True;
+//!The class tests the safety of finite state machines.
+class CheckStateMachine{
 
-            }
-        }
-        
-        return valid;
-    }
-    
-bool check_condition(std::vector<std::string> event_sequence, StateMachine& sm,bool (*f)(StateMachine&, const Event&)){
-        bool result;
-        std::string temp;
-        for(int i=0; i<event_sequence.size(); i++) {
-            temp = event_sequence[i];
-            result &= f(sm, Event(temp));
-        //std::cout<<"In CSM: "<<event_sequence[i]<<std::endl;
-        }
-        return result;
-    }
+public:
+//!Default constructor. 
+CheckStateMachine() {}
 
+//!Initialization method. It is called once to initialize flags to default value.
+void init();
+
+//!Check condition method. Loops through random sequence of events that the machie responds to.
+bool check_condition(std::vector<std::string> event_sequence, StateMachine& sm);
+
+//! returns if the transition is safe or not
+bool property(StateMachine& sm, const Event et);
+
+private:
+bool is_initial;
+State* current_state;
+};
 

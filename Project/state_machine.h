@@ -55,7 +55,7 @@ namespace elma {
         vector<Transition> get_transitions();
 
         State& initial() { return *_initial; }
-
+        State& initial_state();
         json to_json();
         private:
         vector<Transition> _transitions;
