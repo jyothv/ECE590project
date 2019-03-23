@@ -56,11 +56,11 @@ Target
 4. Integrate unittest with rest of the code. Run verification tests.
 - Tested both robot and vending machine state machine. 
 
-5. Submit a report with test results and observations.
+5. Created A Dockerized instance of your code on Dockerhub. Submit a report with test results and observations.
 
 *To run the tests*
 
-docker run -v "$PWD:/source" -it klavins/ecep520:cppenv-json bash <br/>
+docker run -v "$PWD:/source" -it jyothv/jyothv_finalproject:createimage bash <br/>
 cd example_state_machine/ <br/>
 make <br/>
  ./bin/test <br/>
