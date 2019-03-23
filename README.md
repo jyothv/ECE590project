@@ -28,25 +28,65 @@ Did the system change its states as expected by the given sequence of events?
 
 **Steps involved in the project and Milestone**: 
 1. First step is to create a Unittest with random sequence of events for Robot, Microwave and vending machine.
-Target completion date: 03/15/2019
 
-**Progress as on 03/17/2019**:
-
-Below is the states machine of a vending machine. The below state machine will be tested for safe operation.
+Below is the state machine of a vending machine. The below state machine will be tested for safe operation.
 ![Image of state machine](https://github.com/jyothv/ECE590project/blob/master/VendingMachine.PNG)
 
+*New State Machine: Project/example_state_machine/VendingMachine.h*
+
 - I have defined various State for the VendingMachine.Like IDLE, READY, VENDING and FAULT.
-- I have created responses to various events. Like COIN, COIN_RETURN, BUTTON, VEND_COMPLETE, GENERIC_FAULT, RESET.
+- I have created responses to various events. Like COIN, BUTTON, VEND_COMPLETE, GENERIC_FAULT, RESET.
 - I have added transition from one state to other state.
-- I have created a function to generate random sequence of events foor the state machine.
+
+*New header file with function to generate random sequence of events: Project/example_state_machine/RandomSequence.h*
+*New unit_test.cc: Tests the safety of state machines. Test case to check robot and Vending machine*
+
 2. Create a class and methods required to receive sequence as arguments and  returns true or false after each step along the sequence.
-Target completion date: 03/17/2019 *This task is still in progress. Expected to complete around 03/19/2019*
+Target 
+
+*New Class CheckStateMachine: Project/example_state_machine/CheckStateMachine.h, CheckStateMachine.cc*
+
+- Class has two functions check_condition and property.
+- bool check_condition(std::vector<std::string> event_sequence, StateMachine& sm): Loops through random sequence of events that the machine responds to and calls bool property(StateMachine& sm, const Event et) for every event. Returns true if all the events in the sequence are safe, false if not.
+- bool property(StateMachine& sm, const Event et): Takes state machine under test and one event at a time. Checks the current state and sees if its safe to transition next state. If its safe return true, else return false.
+
 3. Add necessary comments and details required to generate API documentation for the project.
-Target completion date: 03/19/2019
+- Added comments with description for class, methods, details of arguments and return type.
+
 4. Integrate unittest with rest of the code. Run verification tests.
-Target completion date: 03/21/2019
-5. Submit a report with test results and observations.
-Target completion date: 03/22/2019
+- Tested both robot and vending machine state machine. 
+
+5. Created A Dockerized instance of your code on Dockerhub. Submit a report with test results and observations.
+
+***To run the tests***
+
+docker run -v "$PWD:/source" -it jyothv/jyothv_finalproject:createimage bash <br/>
+cd example_state_machine/ <br/>
+make <br/>
+ ./bin/test <br/>
+
+*Results*
+
+**Robot**
+
+Normal sequence of events for robot:
+start-->intruder detected-->proximity warning-->battery low-->found recharge station-->battery full-->reset--> <br/>
+The sequence of events is **SAFE** for robot operation. <br/>
+
+Random sequence of events for robot:
+intruder detected-->found recharge station-->battery low-->intruder detected-->battery full-->intruder detected-->found recharge station--> <br/>
+The sequence of events is **UNSAFE** for robot operation.<br/>
+
+**Vending Machine**
+
+Normal sequence of events for Vending Machine: <br/>
+coin-->button-->vend_complete-->generic_fault-->reset--> <br/>
+The sequence of events is **SAFE** for Vending Machine operation. <br/>
+
+Random sequence of events for Vending Machine: <br/>
+coin-->button-->button-->vend_complete-->generic_fault--> <br/>
+The sequence of events is **UNSAFE** for Vending Machine operation. <br/>
+
 
 **Resources**:
 * [Elma](https://klavins.github.io/ECEP520/index.html) will be used a base to develop a library for checking the safety of finite state machines.
