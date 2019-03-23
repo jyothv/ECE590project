@@ -48,7 +48,7 @@ Target
 
 - Class has two functions check_condition and property.
 - bool check_condition(std::vector<std::string> event_sequence, StateMachine& sm): Loops through random sequence of events that the machine responds to and calls bool property(StateMachine& sm, const Event et) for every event. Returns true if all the events in the sequence are safe, false if not.
--bool property(StateMachine& sm, const Event et): Takes state machine under test and one event at a time. Checks the current state and sees if its safe to transition next state. If its safe return true, else return false.
+- bool property(StateMachine& sm, const Event et): Takes state machine under test and one event at a time. Checks the current state and sees if its safe to transition next state. If its safe return true, else return false.
 
 3. Add necessary comments and details required to generate API documentation for the project.
 - Added comments with description for class, methods, details of arguments and return type.
@@ -60,32 +60,32 @@ Target
 
 *To run the tests*
 
-docker run -v "$PWD:/source" -it klavins/ecep520:cppenv-json bash
-cd example_state_machine/
-make
- ./bin/test
+docker run -v "$PWD:/source" -it klavins/ecep520:cppenv-json bash <br/>
+cd example_state_machine/ <br/>
+make <br/>
+ ./bin/test <br/>
 
 *Results*
 
 **Robot**
 
 Normal sequence of events for robot:
-start-->intruder detected-->proximity warning-->battery low-->found recharge station-->battery full-->reset-->
-The sequence of events is **SAFE** for robot operation.
+start-->intruder detected-->proximity warning-->battery low-->found recharge station-->battery full-->reset--> <br/>
+The sequence of events is **SAFE** for robot operation. <br/>
 
 Random sequence of events for robot:
-intruder detected-->found recharge station-->battery low-->intruder detected-->battery full-->intruder detected-->found recharge station-->
-The sequence of events is **UNSAFE** for robot operation.
+intruder detected-->found recharge station-->battery low-->intruder detected-->battery full-->intruder detected-->found recharge station--> <br/>
+The sequence of events is **UNSAFE** for robot operation.<br/>
 
 **Vending Machine**
 
-Normal sequence of events for Vending Machine:
-coin-->button-->vend_complete-->generic_fault-->reset-->
-The sequence of events is **SAFE** for Vending Machine operation.
+Normal sequence of events for Vending Machine: <br/>
+coin-->button-->vend_complete-->generic_fault-->reset--> <br/>
+The sequence of events is **SAFE** for Vending Machine operation. <br/>
 
-Random sequence of events for Vending Machine:
-coin-->button-->button-->vend_complete-->generic_fault-->
-The sequence of events is **UNSAFE** for Vending Machine operation.
+Random sequence of events for Vending Machine: <br/>
+coin-->button-->button-->vend_complete-->generic_fault--> <br/>
+The sequence of events is **UNSAFE** for Vending Machine operation. <br/>
 
 
 **Resources**:
