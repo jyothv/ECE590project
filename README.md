@@ -32,7 +32,7 @@ Did the system change its states as expected by the given sequence of events?
 Below is the state machine of a vending machine. The below state machine will be tested for safe operation.
 ![Image of state machine](https://github.com/jyothv/ECE590project/blob/master/VendingMachine.PNG)
 
-*New State Machine: Project/example_state_machine/VendingMachine.h
+*New State Machine: Project/example_state_machine/VendingMachine.h*
 
 - I have defined various State for the VendingMachine.Like IDLE, READY, VENDING and FAULT.
 - I have created responses to various events. Like COIN, BUTTON, VEND_COMPLETE, GENERIC_FAULT, RESET.
@@ -54,9 +54,38 @@ Target
 - Added comments with description for class, methods, details of arguments and return type.
 
 4. Integrate unittest with rest of the code. Run verification tests.
--
+- Tested both robot and vending machine state machine. 
 
 5. Submit a report with test results and observations.
+
+*To run the tests: *
+
+docker run -v "$PWD:/source" -it klavins/ecep520:cppenv-json bash
+cd example_state_machine/
+make
+ ./bin/test
+
+*Results: *
+
+**Robot**
+
+Normal sequence of events for robot:
+start-->intruder detected-->proximity warning-->battery low-->found recharge station-->battery full-->reset-->
+The sequence of events is **SAFE** for robot operation.
+
+Random sequence of events for robot:
+intruder detected-->found recharge station-->battery low-->intruder detected-->battery full-->intruder detected-->found recharge station-->
+The sequence of events is **UNSAFE** for robot operation.
+
+**Vending Machine**
+
+Normal sequence of events for Vending Machine:
+coin-->button-->vend_complete-->generic_fault-->reset-->
+The sequence of events is **SAFE** for Vending Machine operation.
+
+Random sequence of events for Vending Machine:
+coin-->button-->button-->vend_complete-->generic_fault-->
+The sequence of events is **UNSAFE** for Vending Machine operation.
 
 
 **Resources**:
