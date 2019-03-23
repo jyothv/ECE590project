@@ -39,7 +39,7 @@ Below is the state machine of a vending machine. The below state machine will be
 - I have added transition from one state to other state.
 
 *New header file with function to generate random sequence of events: Project/example_state_machine/RandomSequence.h*
-*New unit_test.cc: Tests the safety of state machines. Test case to check robot and Vending machine.*
+*New unit_test.cc: Tests the safety of state machines. Test case to check robot and Vending machine*
 
 2. Create a class and methods required to receive sequence as arguments and  returns true or false after each step along the sequence.
 Target 
@@ -58,14 +58,14 @@ Target
 
 5. Submit a report with test results and observations.
 
-*To run the tests: *
+*To run the tests*
 
 docker run -v "$PWD:/source" -it klavins/ecep520:cppenv-json bash
 cd example_state_machine/
 make
  ./bin/test
 
-*Results: *
+*Results*
 
 **Robot**
 
