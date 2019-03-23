@@ -58,7 +58,7 @@ Target
 
 5. Created A Dockerized instance of your code on Dockerhub. Submit a report with test results and observations.
 
-*To run the tests*
+***To run the tests***
 
 docker run -v "$PWD:/source" -it jyothv/jyothv_finalproject:createimage bash <br/>
 cd example_state_machine/ <br/>
