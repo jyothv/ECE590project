@@ -11,9 +11,9 @@ std::vector<std::string> generate_random_sequence(std::vector<std::string> event
     int length = events_list.size();
     std::vector<std::string> rand_seq;
     int seq_index;
-    for (int i=0; i<length; i++)
+    for (int i=0; i<(length*2); i++)
     {
-        seq_index = rand() %(length -1);
+        seq_index = rand() %length;
         rand_seq.push_back(events_list[seq_index]);
     }
     return rand_seq;

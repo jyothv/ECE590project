@@ -14,7 +14,7 @@ CheckStateMachine() {}
 //!Initialization method. It is called once to initialize flags to default value.
 void init();
 
-//!Check condition method. Loops through random sequence of events that the machie responds to.
+//!Check condition method. Loops through random sequence of events that the machine responds to.
 bool check_condition(std::vector<std::string> event_sequence, StateMachine& sm);
 
 //! returns if the transition is safe or not
